@@ -355,6 +355,8 @@ contract OrderBookInvariantTest {
         result[0] = FuzzSelector(address(handler), selectors);
     }
 
+    /// forge-config: default.invariant.runs = 256
+    /// forge-config: default.invariant.depth = 100
     function invariant_matchesModelStructuresAndConservation() public view {
         handler.assertAll();
     }
